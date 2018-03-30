@@ -1,0 +1,48 @@
+#+TITLE: My Bar
+
+* Help
+Do prices first?
+* Parameters
+** Drink Name
+- Sets the base price
+** Time
+- Changes the price for happy hours
+- Changes the items for happy hours
+* Drinks
+** Beer
+:PRICE: 5.0
+** Tequila Shot
+:PRICE: 3.0
+** Manhattan
+:PRICE: 7.0
+** Martini
+:PRICE: 7.0
+* Happy Hours
+** [14:00-16:00]
+Half price mixed drinks
+** [20:00-22:00]
+Free Tequila Shot with Beer
+** [02:00-04:00]
+:PROPERTIES:
+:WHAT: Ask question
+Buy one Martini or Manhattan get the other half off
+
+* Definition
+Order -> Time -> ([Recipes], Bill)
+
+* Spec
+#+BEGIN_SRC ruby
+describe '#bartender_gimme' do
+
+end
+#+END_SRC
+* Traps
+#+BEGIN_SRC ruby
+  if !(time < happy_hour_start || time > happy_hour_end)
+  # during happy hour
+    if drink_name != 'Manhattan' && drink_name != 'Martini'
+      # not mixed drink
+      order.items << 'Tequila Shot' unless drink_name == 'Tequila Shot'
+    end
+  end
+#+END_SRC
