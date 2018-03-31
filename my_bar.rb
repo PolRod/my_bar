@@ -1,12 +1,12 @@
 def price_for(drink)
   case drink
-  when 'Beer'
+  when 'Beet juice'
     5.0
-  when 'Tequila Shot'
+  when 'Cleansing Shot'
     3.0
-  when 'Manhattan'
+  when 'Mangohattan'
     7.0
-  when 'Margarita'
+  when 'Mangotini'
     7.0
   end
 end
@@ -16,7 +16,7 @@ def half_price_hour(served_at)
 end
 
 def free_shot?(drink_name, served_at)
-  drink_name == 'Beer' && free_shot_hour(served_at)
+  drink_name == 'Beet Juice' && free_shot_hour(served_at)
 end
 
 def bartender_gimme(my_request, served_at)
@@ -27,7 +27,7 @@ def bartender_gimme(my_request, served_at)
     quantity.times do
       drinks << drink
       price += price_for(drink)
-      drinks << 'Tequila Shot' if free_shot?(drink, served_at)
+      drinks << 'Cleansing Shot' if free_shot?(drink, served_at)
     end
   end
 end

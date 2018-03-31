@@ -9,23 +9,23 @@ Do prices first?
 - Changes the price for happy hours
 - Changes the items for happy hours
 * Drinks
-** Beer
+** Beet juice
 :PRICE: 5.0
-** Tequila Shot
+** Cleansing Shot
 :PRICE: 3.0
-** Manhattan
+** Mangohattan
 :PRICE: 7.0
-** Martini
+** Mangotini
 :PRICE: 7.0
 * Happy Hours
 ** [14:00-16:00]
-Half price mixed drinks
+Half price mango drinks
 ** [20:00-22:00]
-Free Tequila Shot with Beer
+Free Cleansing Shot with Beet Juice
 ** [02:00-04:00]
 :PROPERTIES:
 :WHAT: Ask question
-Buy one Martini or Manhattan get the other half off
+Buy one Mangotini or Mangohattan get the other half off
 
 * Definition
 Order -> Time -> ([Recipes], Bill)
@@ -40,9 +40,9 @@ end
 #+BEGIN_SRC ruby
   if !(time < happy_hour_start || time > happy_hour_end)
   # during happy hour
-    if drink_name != 'Manhattan' && drink_name != 'Martini'
+    if drink_name != 'Mangohattan' && drink_name != 'Mangotini'
       # not mixed drink
-      order.items << 'Tequila Shot' unless drink_name == 'Tequila Shot'
+      order.items << 'Cleansing Shot' unless drink_name == 'Cleansing Shot'
     end
   end
 #+END_SRC

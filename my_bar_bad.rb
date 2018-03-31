@@ -3,20 +3,20 @@ class Bartender
 
   RULES = {
     half_price: 14:00..16:00,
-    free_tequila: 20:00..22:00
+    free_cleansing_shot: 20:00..22:00
   }
 
   PRICES = {
-    beer: 5.0,
-    tequila: 3.0
+    beet_juice: 5.0,
+    cleansing_shot: 3.0
   }
 
   def make_drink(drink_request, time)
     current_rule = RULES.fetch(time, NO_RULE)
     case current_rule
-    when :free_tequila
-      if drink_request == 'beer'
-        @total_drinks += %w(beer tequila)
+    when :free_cleansing_shot
+      if drink_request == 'beet_juice'
+        @total_drinks += %w(beet_juice cleansing_shot)
       else
         @total_drinks += [drink_request]
       end
