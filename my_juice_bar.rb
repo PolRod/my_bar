@@ -4,14 +4,14 @@ def bartender_gimme(my_request, served_at)
   served_at.delete!(':')
   price = 0.0
   begin
-    drink_name = my_request.pop
+    drink_name = my_request.first
     if served_at > first_happy_hour_start
       if !(served_at < free_cleansing_shot_start)
         # after start of FTT
         if served_at <= free_cleansing_shot_end
-          drinks << 'cleansing_shot'
+          drinks << 'Cleansing Shot'
           price += 3.0
-          if my_request.delete('Beet Juice')
+          if drink_name == 'Beet Juice'
             price -= 3.0
           end
         end
@@ -19,10 +19,8 @@ def bartender_gimme(my_request, served_at)
         # after start of first but not in FTT
         unless served_at > first_happy_hour_end
           unless drink_name =~ /mango/
-            # mango drink
-            # prices here
+            price -= 3.5
           end
-          # during first happy hour
         end
       end
     end
@@ -33,10 +31,10 @@ def bartender_gimme(my_request, served_at)
     else
       price += 5.0
     end
-    drinks << drink_name
+    drinks << my_request.pop
   end while my_request.any?
 
-  [drinks, price]
+  [drinks.sort, price]
 end
 
 def first_happy_hour_start
@@ -53,13 +51,4 @@ end
 
 def free_cleansing_shot_end
   "22:00"
-end
-
-def handle_mango_drinks
-  if !(served_at < happy_hour_start || time > happy_hour_end)
-    # during happy hour
-  end
-end
-
-def handle_free_cleansing_shot
 end
