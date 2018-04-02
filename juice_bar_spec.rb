@@ -188,6 +188,8 @@ describe '#juicer_gimme' do
     end
 
     context 'during Free Cleansing Shots' do
+      skip 'This works but only because we do not support the new promotion'
+
       let(:my_request) do
         {
           'Mangotini' => 1,
@@ -195,15 +197,11 @@ describe '#juicer_gimme' do
           'Beet Juice' => 1
         }
       end
-      let(:my_drinks) { ['Beet Juice', 'Mangohattan', 'Mangotini'] }
-
-      before do
-        pending 'This does not work since we do not support the new promotion'
-      end
+      let(:my_drinks) { ['Beet Juice', 'Cleansing Shot', 'Mangohattan', 'Mangotini'] }
 
       let(:at) { '20:15' }
 
-      let(:my_bill) { 15.0 }
+      let(:my_bill) { 19.0 }
 
       it { is_expected.to match([my_drinks, my_bill]) }
     end
