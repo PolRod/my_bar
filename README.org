@@ -1,23 +1,56 @@
-#+TITLE: My Bar
+#+TITLE: The Joo Bar™
 
-* Drinks
-** Beet juice
-:PRICE: 5.0
-** Cleansing Shot
-:PRICE: 3.0
+Welcome to the Joo Bar™, the robotic SF Juice Bar!
+Our Juicer robot is not feeling well and we would like like you to take a look at it.
+We will show you its proprietary super secret source code in a minute.
+But first, some background on our Juices and Happy Hours.
+
+* OUR JUICES
+
+We focus on quality over quantity, so we serve only 4 kinds of freshly squeezed, organic
+Juice, each with a different price.
+
+** Beet Juice
+5.0
+** Cleansing Shot (mostly water, don't tell anyone)
+3.0
 ** Mangohattan
-:PRICE: 7.0
+7.0
 ** Mangotini
-:PRICE: 7.0
-* Happy Hours
-** [14:00-16:00]
-Half price mango drinks
-** [20:00-22:00]
-Free Cleansing Shot with Beet Juice
-** [06:00-08:00]
-:PROPERTIES:
-:WHAT: Ask question
-Buy one Mangotini or Mangohattan get the other half off
+7.0
 
-* Definition
-Order -> Time -> ([Recipes], Bill)
+
+* OUR HAPPY HOURS
+
+Each happy hour happens at a different time and has its own special rules.
+
+** [14:00-16:00]
+Half price on mango drinks (Mangohattan and Mangotini).
+** [20:00-22:00]
+Free Cleansing Shot with Beet Juice.
+
+
+* THE JUICER ROBOT
+
+The robot gets an order and a time for that order, like this:
+#+BEGIN_SRC ruby
+juicer_gimme({ beet_juice: 1, mangohattan: 2 }, '12:35'])
+#+END_SRC
+And it should return the drinks, and the bill, like this:
+#+BEGIN_SRC ruby
+[['Bet Juice', 'Mangohattan', 'Mangohattan'], 19.0]
+#+END_SRC
+
+
+* YOUR MISSION:
+
+Could you look at the source code and refactor it?
+It works well enough (all of the specs pass), but the robot's AI says that it feels dirty inside.
+
+
+* STRETCH GOAL
+
+If you have time, could you also implement this extra happy hour?
+
+** All day each hour between HH:00 and HH:30
+Two mango drinks (Mangohattan or Mangotini), for 10.00.
