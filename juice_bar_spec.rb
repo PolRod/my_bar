@@ -23,7 +23,7 @@ describe '#juicer_gimme' do
       it { is_expected.to match([my_drinks, my_bill]) }
     end
 
-    context 'free clensing shot hours' do
+    context 'free cleansing shot hours' do
       let(:at) { '21:00' }
 
       let(:my_drinks) { ['Beet Juice', 'Cleansing Shot'] }
@@ -37,7 +37,16 @@ describe '#juicer_gimme' do
     let(:my_request) { { 'Mangotini' => 1 } }
 
     context 'regular hours' do
-      let(:at) { '16:35' }
+      let(:at) { '13:00' }
+
+      let(:my_drinks) { ['Mangotini'] }
+      let(:my_bill) { 7.0 }
+
+      it { is_expected.to match([my_drinks, my_bill]) }
+    end
+
+    context 'free cleansing shot hour' do
+      let(:at) { '21:00' }
 
       let(:my_drinks) { ['Mangotini'] }
       let(:my_bill) { 7.0 }
@@ -60,6 +69,15 @@ describe '#juicer_gimme' do
 
     context 'regular hours' do
       let(:at) { '17:00' }
+
+      let(:my_drinks) { ['Mangohattan'] }
+      let(:my_bill) { 7.0 }
+
+      it { is_expected.to match([my_drinks, my_bill]) }
+    end
+
+    context 'free cleansing shot hour' do
+      let(:at) { '21:00' }
 
       let(:my_drinks) { ['Mangohattan'] }
       let(:my_bill) { 7.0 }
@@ -98,7 +116,7 @@ describe '#juicer_gimme' do
       it { is_expected.to match([my_drinks, my_bill]) }
     end
 
-    context 'free clensing shot hours' do
+    context 'free cleansing shot hours' do
       let(:my_request) do
         {
           'Beet Juice' => 1,
@@ -134,7 +152,7 @@ describe '#juicer_gimme' do
       it { is_expected.to match([my_drinks, my_bill]) }
     end
 
-    context 'free clensing shot hours' do
+    context 'free cleansing shot hours' do
       let(:my_request) do
         {
           'Beet Juice' => 2,
@@ -165,6 +183,27 @@ describe '#juicer_gimme' do
       let(:at) { '14:15' }
 
       let(:my_bill) { 7.0 }
+
+      it { is_expected.to match([my_drinks, my_bill]) }
+    end
+
+    context 'during Free Cleansing Shots' do
+      let(:my_request) do
+        {
+          'Mangotini' => 1,
+          'Mangohattan' => 1,
+          'Beet Juice' => 1
+        }
+      end
+      let(:my_drinks) { ['Beet Juice', 'Mangohattan', 'Mangotini'] }
+
+      before do
+        pending 'This does not work since we do not support the new promotion'
+      end
+
+      let(:at) { '20:15' }
+
+      let(:my_bill) { 15.0 }
 
       it { is_expected.to match([my_drinks, my_bill]) }
     end
