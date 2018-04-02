@@ -54,3 +54,5 @@ If you have time, could you also implement this extra happy hour?
 
 ** All day each hour between HH:00 and HH:30
 Two mango drinks (Mangohattan or Mangotini), for 10.00.
+Not compatible with other promos.
+In case of collission with another promo, the other promo takes precedence.
