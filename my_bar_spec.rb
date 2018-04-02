@@ -1,7 +1,7 @@
 require 'my_juice_bar'
 
-describe '#bartender_gimme' do
-  subject { bartender_gimme(my_request, at) }
+describe '#juicer_gimme' do
+  subject { juicer_gimme(my_request, at) }
 
   context 'beet juice' do
     context 'regular hours' do
