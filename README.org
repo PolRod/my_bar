@@ -10,10 +10,10 @@ But first, some background on our Juices and Happy Hours.
 We focus on quality over quantity, so we serve only 4 kinds of freshly squeezed, organic
 Juice, each with a different price.
 
-- Beet Juice :: 5.0
-- Cleansing Shot (mostly water, don't tell anyone) :: 3.0
-- Mangohattan :: 7.0
-- Mangotini :: 7.0
+- Beet Juice :: $5.00
+- Cleansing Shot (mostly water, don't tell anyone) :: $3.00
+- Mangohattan :: $7.00
+- Mangotini :: $7.00
 
 
 * OUR HAPPY HOURS
