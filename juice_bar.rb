@@ -17,7 +17,7 @@ def juicer_gimme(my_request, served_at)
           end
         end
       else
-        unless served_at > '16:00' && drink_name =~ /mango/i
+        unless served_at > '16:00' || /mango/i !~ drink_name
           balance -= 3.5
         end
       end
