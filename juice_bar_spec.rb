@@ -4,8 +4,8 @@ describe '#juicer_gimme' do
   subject { juicer_gimme(my_request, at) }
 
   context 'beet juice' do
+    let(:my_request) { {'Beet Juice' => 1} }
     context 'regular hours' do
-      let(:my_request) { ['Beet Juice'] }
       let(:at) { '13:00' }
 
       let(:my_drinks) { ['Beet Juice'] }
@@ -15,7 +15,6 @@ describe '#juicer_gimme' do
     end
 
     context 'free clensing shot hours' do
-      let(:my_request) { ['Beet Juice'] }
       let(:at) { '21:00' }
 
       let(:my_drinks) { ['Beet Juice', 'Cleansing Shot'] }
@@ -26,8 +25,9 @@ describe '#juicer_gimme' do
   end
 
   context 'mangotini' do
+    let(:my_request) { { 'Mangotini' => 1 } }
+
     context 'regular hours' do
-      let(:my_request) { ['Mangotini'] }
       let(:at) { '13:00' }
 
       let(:my_drinks) { ['Mangotini'] }
@@ -37,7 +37,6 @@ describe '#juicer_gimme' do
     end
 
     context 'half price mango hours' do
-      let(:my_request) { ['Mangotini'] }
       let(:at) { '15:00' }
 
       let(:my_drinks) { ['Mangotini'] }
@@ -48,8 +47,9 @@ describe '#juicer_gimme' do
   end
 
   context 'mangohattan' do
+    let(:my_request) { { 'Mangohattan' => 1 } }
+
     context 'regular hours' do
-      let(:my_request) { ['Mangohattan'] }
       let(:at) { '13:00' }
 
       let(:my_drinks) { ['Mangohattan'] }
@@ -59,10 +59,9 @@ describe '#juicer_gimme' do
     end
 
     context 'half price mango hours' do
-      let(:my_request) { ['Mangotini'] }
       let(:at) { '15:00' }
 
-      let(:my_drinks) { ['Mangotini'] }
+      let(:my_drinks) { ['Mangohattan'] }
       let(:my_bill) { 3.5 }
 
       it { is_expected.to match([my_drinks, my_bill]) }
@@ -70,8 +69,9 @@ describe '#juicer_gimme' do
   end
 
   context 'cleansing shot' do
+    let(:my_request) { { 'Cleansing Shot' => 1 } }
+
     context 'regular hours' do
-      let(:my_request) { ['Cleansing Shot'] }
       let(:at) { '13:00' }
 
       let(:my_drinks) { ['Cleansing Shot'] }
@@ -81,11 +81,52 @@ describe '#juicer_gimme' do
     end
 
     context 'free clensing shot hours' do
-      let(:my_request) { ['Beet Juice', 'Cleansing Shot'] }
+      let(:my_request) do
+        {
+          'Beet Juice' => 1,
+          'Cleansing Shot' => 1
+        }
+      end
       let(:at) { '21:00' }
 
       let(:my_drinks) { ['Beet Juice', 'Cleansing Shot', 'Cleansing Shot'] }
       let(:my_bill) { 8.0 }
+
+      it { is_expected.to match([my_drinks, my_bill]) }
+    end
+  end
+
+  context 'multiple drinks' do
+    context 'regular hours' do
+      let(:my_request) do
+        {
+          'Beet Juice' => 1,
+          'Cleansing Shot' => 1,
+          'Mangotini' => 1,
+          'Mangohattan' => 1
+        }
+      end
+      let(:at) { '13:00' }
+
+      let(:my_drinks) do
+        a_collection_containing_exactly('Beet Juice', 'Cleansing Shot', 'Mangohattan', 'Mangotini')
+      end
+      let(:my_bill) { 22.0 }
+
+      it { is_expected.to match([my_drinks, my_bill]) }
+    end
+
+    context 'free clensing shot hours' do
+      let(:my_request) do
+        {
+          'Beet Juice' => 2,
+          'Cleansing Shot' => 1
+        }
+      end
+      let(:at) { '21:00' }
+
+      let(:my_drinks) { ['Beet Juice', 'Beet Juice', 'Cleansing Shot', 'Cleansing Shot', 'Cleansing Shot'] }
+      let(:my_bill) { 13.0 }
 
       it { is_expected.to match([my_drinks, my_bill]) }
     end
