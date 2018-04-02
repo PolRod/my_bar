@@ -1,7 +1,6 @@
 def juicer_gimme(my_request, served_at)
   drink_name = nil
   drinks = []
-  served_at.delete!(':')
   bill = 0
 
   begin
@@ -18,7 +17,7 @@ def juicer_gimme(my_request, served_at)
           end
         end
       else
-        unless served_at > '16:00' && drink_name =~ /mango/
+        unless served_at > '16:00' && drink_name =~ /mango/i
           balance -= 3.5
         end
       end
