@@ -1,4 +1,4 @@
-require 'my_juice_bar'
+require 'juice_bar'
 
 describe '#juicer_gimme' do
   subject { juicer_gimme(my_request, at) }
