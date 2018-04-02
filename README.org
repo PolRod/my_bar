@@ -11,13 +11,13 @@ We focus on quality over quantity, so we serve only 4 kinds of freshly squeezed,
 Juice, each with a different price.
 
 ** Beet Juice
-:PRICE: 5.0
+5.0
 ** Cleansing Shot (mostly water, don't tell anyone)
-:PRICE: 3.0
+3.0
 ** Mangohattan
-:PRICE: 7.0
+7.0
 ** Mangotini
-:PRICE: 7.0
+7.0
 
 
 * OUR HAPPY HOURS
