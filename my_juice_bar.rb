@@ -9,10 +9,8 @@ def bartender_gimme(my_request, served_at)
       if !(served_at < free_cleansing_shot_start)
         # after start of FTT
         if served_at <= free_cleansing_shot_end
-          drinks << 'Cleansing Shot'
-          price += 3.0
           if drink_name == 'Beet Juice'
-            price -= 3.0
+            drinks << 'Cleansing Shot'
           end
         end
       else
@@ -31,7 +29,7 @@ def bartender_gimme(my_request, served_at)
     else
       price += 5.0
     end
-    drinks << my_request.pop
+    drinks << my_request.shift
   end while my_request.any?
 
   [drinks.sort, price]
