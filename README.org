@@ -52,5 +52,5 @@ It works well enough (all of the specs pass), but the robot's AI says that it fe
 
 If you have time, could you also implement this extra happy hour?
 
-** [17:00-19:00]
-Buy one Mango drink (Mangohattan and Mangotini), get a second one at 50% off.
+** All day each hour between HH:00 and HH:30
+Two mango drinks (Mangohattan or Mangotini), for 10.00.
