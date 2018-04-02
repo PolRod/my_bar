@@ -89,6 +89,15 @@ describe '#juicer_gimme' do
       it { is_expected.to match([my_drinks, my_bill]) }
     end
 
+    context 'half price mango hours' do
+      let(:at) { '15:00' }
+
+      let(:my_drinks) { ['Cleansing Shot'] }
+      let(:my_bill) { 3.0 }
+
+      it { is_expected.to match([my_drinks, my_bill]) }
+    end
+
     context 'free clensing shot hours' do
       let(:my_request) do
         {
