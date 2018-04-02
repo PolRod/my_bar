@@ -10,24 +10,18 @@ But first, some background on our Juices and Happy Hours.
 We focus on quality over quantity, so we serve only 4 kinds of freshly squeezed, organic
 Juice, each with a different price.
 
-** Beet Juice
-5.0
-** Cleansing Shot (mostly water, don't tell anyone)
-3.0
-** Mangohattan
-7.0
-** Mangotini
-7.0
+- Beet Juice :: $5.00
+- Cleansing Shot (mostly water, don't tell anyone) :: $3.00
+- Mangohattan :: $7.00
+- Mangotini :: $7.00
 
 
 * OUR HAPPY HOURS
 
 Each happy hour happens at a different time and has its own special rules.
 
-** [14:00-16:00]
-Half price on mango drinks (Mangohattan and Mangotini).
-** [20:00-22:00]
-Free Cleansing Shot with Beet Juice.
+- Half price on mango drinks (Mangohattan and Mangotini) :: runs from 14:00 until 16:00.
+- Free Cleansing Shot with Beet Juice :: runs from 20:00 until 22:00.
 
 
 * THE JUICER ROBOT
@@ -47,12 +41,11 @@ And it should return the drinks, and the bill, like this:
 Could you look at the source code and refactor it?
 It works well enough (all of the specs pass), but the robot's AI says that it feels dirty inside.
 
-
 * STRETCH GOAL
 
 If you have time, could you also implement this extra happy hour?
 
-** All day each hour between HH:00 and HH:30
-Two mango drinks (Mangohattan or Mangotini), for 10.00.
+** All day each even hour between HH:00 and HH:30
+Two mango drinks (Mangohattan or Mangotini), for $10.00.
 Not compatible with other promos.
 In case of collission with another promo, the other promo takes precedence.
