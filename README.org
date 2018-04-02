@@ -1,0 +1,23 @@
+#+TITLE: My Bar
+
+* Drinks
+** Beet juice
+:PRICE: 5.0
+** Cleansing Shot
+:PRICE: 3.0
+** Mangohattan
+:PRICE: 7.0
+** Mangotini
+:PRICE: 7.0
+* Happy Hours
+** [14:00-16:00]
+Half price mango drinks
+** [20:00-22:00]
+Free Cleansing Shot with Beet Juice
+** [06:00-08:00]
+:PROPERTIES:
+:WHAT: Ask question
+Buy one Mangotini or Mangohattan get the other half off
+
+* Definition
+Order -> Time -> ([Recipes], Bill)
