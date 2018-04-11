@@ -1,6 +1,6 @@
-#+TITLE: The Joo Bar™
+#+TITLE: The Juice Bar™
 
-Welcome to the Joo Bar™, the robotic SF Juice Bar!
+Welcome to the Juice Bar™, the robotic SF Juice Bar!
 Our Juicer robot is not feeling well and we would like like you to take a look at it.
 We will show you its proprietary super secret source code in a minute.
 But first, some background on our Juices and Happy Hours.
