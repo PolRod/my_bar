@@ -28,24 +28,24 @@ Each happy hour happens at a different time and has its own special rules.
 
 The robot gets an order and a time for that order, like this:
 #+BEGIN_SRC ruby
-juicer_gimme({ beet_juice: 1, mangohattan: 2 }, '12:35'])
+juicer_gimme({ 'Beet Juice' => 1, 'Mangohattan' => 2 }, '12:35'])
 #+END_SRC
 And it should return the drinks, and the bill, like this:
 #+BEGIN_SRC ruby
-[['Bet Juice', 'Mangohattan', 'Mangohattan'], 19.0]
+[['Beet Juice', 'Mangohattan', 'Mangohattan'], 19.0]
 #+END_SRC
 
 
-* YOUR MISSION:
+* PRIMARY MISSION
 
 Could you look at the source code and refactor it?
 It works well enough (all of the specs pass), but the robot's AI says that it feels dirty inside.
+There is no need to keep the existing code, as long as tests pass you can safely assume it is correct.
 
-* STRETCH GOAL
+* SECONDARY MISSION
 
-If you have time, could you also implement this extra happy hour?
+Now that you have successfully updated our robot, we have an additional task for you.
+Our juice bar would like to run a new type of promotion which is valid for the first 30 mintes of every even hour.
+During this promotion customers can purchase two mango drinks for $10
 
-** All day each even hour between HH:00 and HH:30
-Two mango drinks (Mangohattan or Mangotini), for $10.00.
-Not compatible with other promos.
-In case of collission with another promo, the other promo takes precedence.
+- Two mango drinks (Mangohattan or Mangotini), for $10.00. :: All day each even hour between HH:00 and HH:30
