@@ -45,6 +45,19 @@ There is no need to keep the existing code, as long as tests pass you can safely
 * SECONDARY MISSION
 
 Now that you have successfully updated our robot, we have an additional task for you.
+
+We want to include two new kinds of drinks. They are premium Mango drinks.
+They are more expensive than regular mango drinks, but the same happy hour applies.
+- The Man Goes :: $8.00
+- Anime and Mango :: $9.00
+- Ognam :: $10.00
+
+We are also adding another shot. We already had a cleansing shot so we are introducing:
+- Dirty Shot :: $5.00
+Like the cleansing shot, no special rules apply to this.
+
+* TERTIARY MISSION
+
 Our juice bar would like to run a new type of promotion which is valid for the first 30 mintes of every even hour.
 During this promotion customers can purchase two mango drinks for $10
 
